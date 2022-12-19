@@ -2,20 +2,27 @@ import React from 'react';
 import Item from './Item';
 import icons from '../assets/iconsURL.json';
 import styled from 'styled-components';
+import { v4 as uuidv4 } from 'uuid';
 
 const Grid = () => {
+  const shuffledIcons = shuffle(icons);
+
+  function shuffle(array) {
+    return array.sort(() => Math.random() - 0.5);
+  }
+
   return (
     <StyledGrid>
-      {icons &&
-        icons.map((image) => (
+      {shuffledIcons &&
+        shuffledIcons.map((image) => (
           <div>
-            <Item key={image.id} image={image} />
+            <Item key={uuidv4()} image={image} />
           </div>
         ))}
-      {icons &&
-        icons.map((image) => (
+      {shuffledIcons &&
+        shuffledIcons.map((image) => (
           <div>
-            <Item key={image.id} image={image} />
+            <Item key={uuidv4()} image={image} />
           </div>
         ))}
     </StyledGrid>
