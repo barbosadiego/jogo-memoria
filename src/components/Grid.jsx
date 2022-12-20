@@ -30,6 +30,7 @@ const Grid = () => {
 export default Grid;
 
 const StyledGrid = styled.div`
+  width: 100%;
   display: grid;
   justify-items: center;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
