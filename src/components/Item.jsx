@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Item = ({ image }) => {
   return (
-    <StyledItem>
+    <StyledItem id={image.id}>
       <img src={image.url} />
     </StyledItem>
   );
