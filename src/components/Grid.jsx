@@ -5,26 +5,24 @@ import styled from 'styled-components';
 import { v4 as uuidv4 } from 'uuid';
 
 const Grid = () => {
-  const shuffledIcons = shuffle(icons);
+  let tempRandom = [];
+  const numOfGrids = 2;
 
   function shuffle(array) {
     return array.sort(() => Math.random() - 0.5);
   }
 
+  for (let i = 1; i <= numOfGrids; i++) {
+    let a = shuffle(icons).slice();
+    tempRandom.push(a);
+  }
+
+  const shuffedIcons = tempRandom[0].concat(tempRandom[numOfGrids - 1]);
+
   return (
     <StyledGrid>
-      {shuffledIcons &&
-        shuffledIcons.map((image) => (
-          <div>
-            <Item key={uuidv4()} image={image} />
-          </div>
-        ))}
-      {shuffledIcons &&
-        shuffledIcons.map((image) => (
-          <div>
-            <Item key={uuidv4()} image={image} />
-          </div>
-        ))}
+      {shuffedIcons &&
+        shuffedIcons.map((image) => <Item key={uuidv4()} image={image} />)}
     </StyledGrid>
   );
 };
