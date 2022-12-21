@@ -19,4 +19,5 @@ export default App;
 const Title = styled.h1`
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: clamp(1.5rem, 5vw, 5rem);
+  text-align: center;
 `;
