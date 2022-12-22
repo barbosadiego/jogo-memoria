@@ -1,0 +1,39 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 100px));
+  justify-content: center;
+  align-content: center;
+  gap: 0.5rem;
+
+  .btn {
+    background-color: rgba(128, 128, 128, 0.3);
+    cursor: pointer;
+    padding: 20px;
+    border-radius: 3px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotateY(-180deg);
+    transition: transform 0.3s;
+
+    &.turned {
+      transform: rotateY(0deg);
+
+      .side-back {
+        opacity: 0;
+      }
+    }
+  }
+
+  .side-back {
+    position: absolute;
+    background-color: grey;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+    border-radius: 3px;
+  }
+}
