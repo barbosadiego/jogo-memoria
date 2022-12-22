@@ -19,5 +19,8 @@
     text-transform: capitalize;
     text-align: center;
     margin: 10vh 0 5vh;
+    @media screen and (max-width: 600px) {
+      margin: 2rem 0;
+    }
   }
 }
